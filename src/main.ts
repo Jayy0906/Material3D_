@@ -223,7 +223,7 @@ function loadModels(index: number) {
       // console.log(`${modelPath}: ${progress}% loaded`);
     },
     (error) => {
-      // console.log(`${modelPath}: ${error}`);
+      console.log(`${modelPath}: ${error}`);
       loadModels(index + 1);
     }
   );
@@ -369,7 +369,7 @@ if (dayNightToggle) {
         setTimeout(() => {
           const modeSwitchEndTime = performance.now(); // Record the end time
           const modeSwitchDuration = modeSwitchEndTime - modeSwitchStartTime; // Calculate the duration
-          // console.log(`Day mode switch completed in ${modeSwitchDuration} milliseconds`);
+          console.log(`Day mode switch completed in ${modeSwitchDuration} milliseconds`);
 
           // Hide the spinner after a minimum duration
           setTimeout(() => {
@@ -402,7 +402,7 @@ if (dayNightToggle) {
         setTimeout(() => {
           const modeSwitchEndTime = performance.now(); // Record the end time
           const modeSwitchDuration = modeSwitchEndTime - modeSwitchStartTime; // Calculate the duration
-          // console.log(`Night mode switch completed in ${modeSwitchDuration} milliseconds`);
+          console.log(`Night mode switch completed in ${modeSwitchDuration} milliseconds`);
 
           // Hide the spinner after a minimum duration
           setTimeout(() => {
@@ -413,7 +413,7 @@ if (dayNightToggle) {
 
       const toggleEndTime = performance.now(); // Record the end time
       const toggleDuration = toggleEndTime - toggleStartTime; // Calculate the duration
-      // console.log(`Day/Night toggle completed in ${toggleDuration} milliseconds`);
+      console.log(`Day/Night toggle completed in ${toggleDuration} milliseconds`);
     });
   });
 } else {
