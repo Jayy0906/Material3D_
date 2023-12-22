@@ -131,15 +131,15 @@ Array.from(buttonArr).forEach(button => {
             modelData.scene,
             variantName
           );
-          console.log(`Selected variant "${variantName}" for model "${selectedModel}"`);
+          // console.log(`Selected variant "${variantName}" for model "${selectedModel}"`);
         } catch (error) {
-          console.error(`Error selecting variant: ${error}`);
+          // console.error(`Error selecting variant: ${error}`);
         }
       } else {
-        console.error(`Select variant function not found for model "${selectedModel}"`);
+        // console.error(`Select variant function not found for model "${selectedModel}"`);
       }
     } else {
-      console.error(`Model data not found for "${selectedModel}"`);
+      // console.error(`Model data not found for "${selectedModel}"`);
     }
   });
 });
@@ -149,7 +149,7 @@ function loadModels(index: number) {
   // console.log('started loading')
   if (index >= modelPaths.length) {
     // All models loaded
-    console.log('All models loaded successfully.');
+    // console.log('All models loaded successfully.');
     progressContainer.style.display = 'none';
 
     // After loading is complete, set the desired pixel ratio
@@ -212,18 +212,18 @@ function loadModels(index: number) {
       replaceMaterial(gltf.scene, FloorLamp_Cover, newMaterial);
     }
 
-      console.log(`${modelPath}: Loaded successfully`);
+      // console.log(`${modelPath}: Loaded successfully`);
 
       // Load the next model recursively
       loadModels(index + 1);
     },
     (xhr) => {
-      console.log(`${modelPath}: ${(xhr.loaded / xhr.total) * 100}% loaded`);
+      // console.log(`${modelPath}: ${(xhr.loaded / xhr.total) * 100}% loaded`);
       // progressBar.style.width = `${progress}%`;
       // console.log(`${modelPath}: ${progress}% loaded`);
     },
     (error) => {
-      console.log(`${modelPath}: ${error}`);
+      // console.log(`${modelPath}: ${error}`);
       loadModels(index + 1);
     }
   );
@@ -278,7 +278,7 @@ function replaceMaterial(model: THREE.Object3D, materialName: string, newMateria
 
       // Check if the mesh name matches the specified materialName
       if (mesh.name === materialName) {
-        console.log(`Replacing material for ${materialName}`);
+        // console.log(`Replacing material for ${materialName}`);
         mesh.material = newMaterial;
       }
     }
@@ -307,7 +307,7 @@ if (specificObjectToggleCheckbox) {
     }
   });
 } else {
-  console.error("Element with id 'specificObjectToggle' not found.");
+  // console.error("Element with id 'specificObjectToggle' not found.");
 }
 
 // Function to add a directional light
@@ -369,7 +369,7 @@ if (dayNightToggle) {
         setTimeout(() => {
           const modeSwitchEndTime = performance.now(); // Record the end time
           const modeSwitchDuration = modeSwitchEndTime - modeSwitchStartTime; // Calculate the duration
-          console.log(`Day mode switch completed in ${modeSwitchDuration} milliseconds`);
+          // console.log(`Day mode switch completed in ${modeSwitchDuration} milliseconds`);
 
           // Hide the spinner after a minimum duration
           setTimeout(() => {
@@ -402,7 +402,7 @@ if (dayNightToggle) {
         setTimeout(() => {
           const modeSwitchEndTime = performance.now(); // Record the end time
           const modeSwitchDuration = modeSwitchEndTime - modeSwitchStartTime; // Calculate the duration
-          console.log(`Night mode switch completed in ${modeSwitchDuration} milliseconds`);
+          // console.log(`Night mode switch completed in ${modeSwitchDuration} milliseconds`);
 
           // Hide the spinner after a minimum duration
           setTimeout(() => {
@@ -413,11 +413,11 @@ if (dayNightToggle) {
 
       const toggleEndTime = performance.now(); // Record the end time
       const toggleDuration = toggleEndTime - toggleStartTime; // Calculate the duration
-      console.log(`Day/Night toggle completed in ${toggleDuration} milliseconds`);
+      // console.log(`Day/Night toggle completed in ${toggleDuration} milliseconds`);
     });
   });
 } else {
-  console.error("Element with id 'dayNightToggle' not found.");
+  // console.error("Element with id 'dayNightToggle' not found.");
 }
 
 const stats = new Stats();
