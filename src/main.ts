@@ -10,19 +10,26 @@ import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
 import { SSAOPass } from 'three/examples/jsm/postprocessing/SSAOPass.js';
 import { SMAAPass } from 'three/examples/jsm/postprocessing/SMAAPass.js';
 import { SubsurfaceScatteringShader } from 'three/examples/jsm/shaders/SubsurfaceScatteringShader';
-import {
-  RepeatWrapping,
-  ShaderMaterial,
-  TextureLoader,
-  UniformsUtils,
-  Vector3,
-  DoubleSide,
-} from 'three';
+import { RepeatWrapping, ShaderMaterial, TextureLoader, UniformsUtils, Vector3, DoubleSide } from 'three';
 
 //@ts-ignore
 import GLTFMeshGpuInstancingExtension from 'three-gltf-extensions/loaders/EXT_mesh_gpu_instancing/EXT_mesh_gpu_instancing.js';
 //@ts-ignore
 import GLTFMaterialsVariantsExtension from 'three-gltf-extensions/loaders/KHR_materials_variants/KHR_materials_variants.js';
+
+const modelPaths = [
+  'models/Floor.glb',
+  'models/Wall.glb',
+  'models/Small_Carpet.glb',
+  'models/Coffee_Table.glb',
+  'models/Frame.glb',
+  'models/Plant.glb',
+  'models/Window.glb',
+  'models/Floor_Lamp.glb',
+  'models/Accessories.glb',
+  'models/Carpet.glb',
+  'models/Sofa.glb',
+];
 
 const progressContainer = document.querySelector('.spinner-container') as HTMLElement;
 const specificObjectToggleCheckbox = document.getElementById('specificObjectToggle') as HTMLInputElement;
@@ -95,19 +102,6 @@ function setupHDRI() {
 
 setupHDRI();
 
-const modelPaths = [
-  'models/Floor.glb',
-  'models/Wall.glb',
-  'models/Small_Carpet.glb',
-  'models/Coffee_Table.glb',
-  'models/Frame.glb',
-  'models/Plant.glb',
-  'models/Window.glb',
-  'models/Floor_Lamp.glb',
-  'models/Accessories.glb',
-  'models/Carpet.glb',
-  'models/Sofa.glb',
-];
 
 //Changing Material variants
 const loadedModelsMap: any = {}
